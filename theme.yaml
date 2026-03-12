@@ -5,7 +5,6 @@
 # alongside toc.yaml. If a theme.yaml is present, it becomes the sole source of
 # branding — UI-configured values in the Vendor Portal are ignored entirely.
 # If no theme.yaml exists, UI-configured branding is used as-is.
-#
 # This example demonstrates a dark, warm-toned theme inspired by modern dev portals.
 
 branding:
