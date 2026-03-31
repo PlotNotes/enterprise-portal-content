@@ -27,6 +27,8 @@ navigation:
         visible_when:
           permissions:
             - canViewSecurity
+          customer_type:
+            - dev
       - title: Linux Bundles
         page: pages/operations/bundles/linux.md
         visible_when:
