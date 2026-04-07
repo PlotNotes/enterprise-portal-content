@@ -2,8 +2,8 @@
 title: Release History
 ---
 
-# Release History
+# Purrfect Match Release History
 
-Track all updates, security patches, and improvements.
+View all available versions of Purrfect Match, including release notes and changelogs.
 
 <ReleaseHistory />

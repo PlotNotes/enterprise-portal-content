@@ -1,10 +1,10 @@
 ---
-title: Upload Bundles
+title: Upload Support Bundles
 ---
 
 # Support Bundles
 
-View and manage all uploaded support bundles from both Linux and Helm installations.
+Upload and manage support bundles from your Purrfect Match installations.
 
 <SupportBundleUploadHistory />
 

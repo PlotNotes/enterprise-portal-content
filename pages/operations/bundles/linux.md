@@ -7,6 +7,6 @@ visible_when:
 
 # Linux Support Bundles
 
-Collect and view support bundles from your Linux (Embedded Cluster) installations.
+Collect and view support bundles from your Purrfect Match Embedded Cluster installations.
 
 <LinuxBundles />

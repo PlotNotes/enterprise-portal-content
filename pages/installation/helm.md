@@ -5,22 +5,20 @@ visible_when:
     - isHelmInstallEnabled
 ---
 
-# Helm Installation
+# Install Purrfect Match with Helm
 
-Install your application on a Kubernetes cluster using Helm charts. Read the docs or select your deployment preferences.
+Deploy Purrfect Match to your existing Kubernetes cluster using Helm.
 
-## Requirements
+<Prerequisites>
+- Kubernetes **1.28** or later
+- Helm **3.10** or later
+- `kubectl` configured with cluster access
+- A default StorageClass for persistent volumes
+</Prerequisites>
 
-Review the following prerequisites before installing.
+## Configure Your Installation
 
-- Kubernetes cluster v1.26 or later
-- Helm 3.x installed on your workstation
-- kubectl configured with cluster access
-- StorageClass available for persistent volumes
-
-## Configuration
-
-Customize the options below. The install commands will update automatically based on your selections.
+Select your deployment preferences below. The install commands will update automatically.
 
 <KubernetesDistribution />
 <NetworkAvailability installType="helm" />
@@ -31,8 +29,22 @@ Customize the options below. The install commands will update automatically base
 
 <HelmInstallAssets />
 
-<InstanceName />
+<InstanceName title="Name Your Purrfect Match Instance" />
 
-## Post-Install
+## Verify Installation
 
-See the post-installation documentation for next steps including configuring TLS, setting up backups, and connecting to your identity provider.
+After installation completes, verify that all pods are running:
+
+<CommandBlock label="Verify pods">
+kubectl get pods -n purrfect-match
+</CommandBlock>
+
+<Tip>
+See the [Helm Chart Reference](helm-chart-reference) for a full list of configurable values.
+</Tip>
+
+## Next Steps
+
+- Review the [Helm Chart Reference](helm-chart-reference) to customize your deployment
+- Check [Updates](../updates/checking) to stay current with the latest releases
+- Visit the [FAQ](../support/faq) for common questions

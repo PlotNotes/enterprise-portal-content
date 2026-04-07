@@ -1,50 +1,62 @@
 navigation:
-  - title: Installation
-    icon: rocket
+  - title: Getting Started
+    icon: home
     items:
       - title: Requirements
         page: pages/installation/requirements.md
-        visible_when:
-          entitlements:
-            - isEmbeddedClusterDownloadEnabled
       - title: Release History
         page: pages/installation/release-history.md
-      - title: Linux
+
+  - title: Installation
+    icon: rocket
+    items:
+      - title: Linux Installation
         page: pages/installation/linux.md
         visible_when:
           entitlements:
             - isEmbeddedClusterDownloadEnabled
-      - title: Helm
+      - title: Helm Installation
         page: pages/installation/helm.md
         visible_when:
           entitlements:
             - isHelmInstallEnabled
+      - title: Helm Chart Reference
+        page: pages/installation/helm-chart-reference.md
+        visible_when:
+          entitlements:
+            - isHelmInstallEnabled
+
+  - title: Infrastructure
+    icon: server
+    items:
+      - title: Terraform Module
+        page: pages/infrastructure/terraform.md
+        visible_when:
+          entitlements:
+            - terraformModuleEnabled
+
   - title: Operations
     icon: wrench
     items:
+      - title: Checking for Updates
+        page: pages/updates/checking.md
       - title: Security
         page: pages/operations/security.md
         visible_when:
           permissions:
             - canViewSecurity
-      - title: Linux Bundles
+      - title: Linux Support Bundles
         page: pages/operations/bundles/linux.md
         visible_when:
           entitlements:
             - isEmbeddedClusterDownloadEnabled
-      - title: Helm Bundles
+      - title: Helm Support Bundles
         page: pages/operations/bundles/helm.md
         visible_when:
           entitlements:
             - isHelmInstallEnabled
-      - title: Upload Bundles
+      - title: Upload Support Bundle
         page: pages/operations/bundles/uploaded.md
-
-  - title: Updates
-    icon: refresh-cw
-    items:
-      - title: Checking for Updates
-        page: pages/updates/checking.md
 
   - title: Support
     icon: life-buoy

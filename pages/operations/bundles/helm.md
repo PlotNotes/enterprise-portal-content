@@ -7,6 +7,6 @@ visible_when:
 
 # Helm Support Bundles
 
-Collect and view support bundles from your Helm-based Kubernetes installations.
+Collect and view support bundles from your Helm-based Purrfect Match installations.
 
 <HelmBundles />

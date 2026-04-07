@@ -1,46 +1,39 @@
 ---
-title: Documentation
+title: Purrfect Match Documentation
 ---
 
-# Documentation
+# Welcome to Purrfect Match
 
-Welcome to your personalized documentation portal. The navigation and content are customized based on your license entitlements.
+Purrfect Match is a cat adoption platform that connects shelters with loving families. It streamlines the adoption process with intelligent matching, real-time availability tracking, and comprehensive shelter management tools.
 
-## Available Features
+<Note title="Welcome, {{ customer.name }}!">
+This portal contains documentation tailored to your license and deployment method. Use the sidebar to navigate.
+</Note>
 
-Your installation includes access to the following features:
+## Key Features
 
-{{#if entitlements.isEmbeddedClusterDownloadEnabled}}
-- **Linux (Embedded Cluster):** Install on a Linux server using Embedded Cluster
-{{/if}}
-{{#if entitlements.isHelmInstallEnabled}}
-- **Helm Installation:** Deploy to existing Kubernetes clusters using Helm charts
-{{/if}}
-{{#if entitlements.isAirgapSupported}}
-- **Air Gap Support:** Install in disconnected environments
-{{/if}}
+- **Smart Matching** -- AI-powered matching algorithm pairs adopters with cats based on lifestyle, preferences, and compatibility
+- **Shelter Dashboard** -- Real-time inventory of cats across shelters with health records, photos, and adoption status
+- **Adoption Workflow** -- End-to-end application processing with background checks, approvals, and follow-up scheduling
+- **Analytics** -- Adoption trends, shelter capacity metrics, and outcome tracking
 
 ## Getting Started
 
-Use the sidebar navigation on the left to explore available documentation sections. We recommend starting with:
-
 {{#if entitlements.isEmbeddedClusterDownloadEnabled}}
-1. **Installation Requirements** — Review system requirements and prerequisites for Embedded Cluster installations
-{{/if}}
-2. **Installation Guide** — Follow step-by-step installation instructions for your deployment method
-3. **Updates** — Check for and manage application updates
-4. **Support Bundles** — Generate diagnostic bundles for troubleshooting
-
-## Quick Links
-
-{{#if entitlements.isEmbeddedClusterDownloadEnabled}}
-- [Installation Requirements](installation/requirements)
-- [Linux Installation](installation/linux)
+- [System Requirements](installation/requirements) -- Review prerequisites before installing
+- [Linux Installation](installation/linux) -- Install Purrfect Match on a Linux server
 {{/if}}
 {{#if entitlements.isHelmInstallEnabled}}
-- [Helm Installation](installation/helm)
+- [Helm Installation](installation/helm) -- Deploy to an existing Kubernetes cluster
+- [Helm Chart Reference](installation/helm-chart-reference) -- Configure chart values
 {{/if}}
-- [Release History](installation/release-history)
-- [Check for Updates](updates/checking)
-- [Support Bundles](operations/bundles/uploaded)
-- [FAQ](support/faq)
+- [Release History](installation/release-history) -- View all available versions
+- [FAQ](support/faq) -- Common questions and answers
+
+## Current Version
+
+You are running **{{ release.version }}** on the **{{ channel.name }}** channel.
+
+<Tip>
+Need help? Visit our [FAQ](support/faq) or [contact support](support/contact) for assistance.
+</Tip>

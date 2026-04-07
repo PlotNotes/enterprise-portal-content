@@ -5,45 +5,44 @@ visible_when:
     - isEmbeddedClusterDownloadEnabled
 ---
 
-# Linux Installation
+# Install Purrfect Match on Linux
 
-Install your application on a Linux server using Embedded Cluster. Read the docs or select your deployment preferences.
+Install Purrfect Match on a Linux server using Embedded Cluster. This option bundles Kubernetes and all dependencies into a single installer.
 
-## Requirements
+<Prerequisites>
+- Ubuntu 20.04+, RHEL 8+, or CentOS 8+
+- 2 CPUs, 2 GB RAM, 40 GB disk minimum
+- Root access or `sudo` privileges
+- See [full requirements](requirements) for port and system details
+</Prerequisites>
 
-See the [system requirements documentation](requirements) for the full list of prerequisites. At minimum:
-
-- Ubuntu 20.04+ / RHEL 8+ / CentOS 8+
-- 4 CPUs, 8GB RAM, 40GB disk minimum
-- Root or sudo access
-
-## Configuration
-
-Customize the options below. The install commands will update automatically based on your selections.
+## Configure Your Installation
 
 <NetworkAvailability installType="linux" />
 <VersionSelector installType="linux" />
 
 ## Install
 
-SSH into your target machine and run the following command as root or with sudo.
+SSH into your target machine and run the following command as root or with `sudo`:
 
 <LinuxInstallAssets />
 
 ## Verify Installation
 
-Once the installer completes, it will print the URL for the admin console. Open it in your browser to continue with application setup.
+Once the installer completes, it will display the Admin Console URL. Open it in your browser to complete setup.
 
-<CommandBlock>
+<CommandBlock label="Verify installation">
 # Check that all pods are running
 kubectl get pods -A
 
-# Access the admin console
-echo "Admin Console: https://$(hostname):8800"
+# Access the Admin Console
+echo "Admin Console: https://$(hostname):30000"
 </CommandBlock>
 
-<InstanceName />
+<InstanceName title="Name Your Purrfect Match Instance" />
 
-## Post-Install
+## Next Steps
 
-See the post-installation documentation for next steps including configuring TLS, setting up backups, and connecting to your identity provider.
+- Complete initial setup via the Admin Console
+- Check [Updates](../updates/checking) to stay current with new releases
+- Visit the [FAQ](../support/faq) for common questions
