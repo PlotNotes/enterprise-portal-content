@@ -1,35 +1,41 @@
 navigation:
   - title: Getting Started
-    icon: home
+    icon: cat
     items:
       - title: Requirements
+        icon: shield
         page: pages/installation/requirements.md
       - title: Release History
+        icon: refresh-cw
         page: pages/installation/release-history.md
 
   - title: Installation
     icon: rocket
     items:
       - title: Linux Installation
+        icon: server
         page: pages/installation/linux.md
         visible_when:
           entitlements:
             - isEmbeddedClusterDownloadEnabled
       - title: Helm Installation
+        icon: zap
         page: pages/installation/helm.md
         visible_when:
           entitlements:
             - isHelmInstallEnabled
       - title: Helm Chart Reference
-        page: pages/installation/helm-chart-reference.md
+        helm_chart:
+          name: "purrfect-match"
         visible_when:
           entitlements:
             - isHelmInstallEnabled
 
   - title: Infrastructure
-    icon: server
+    icon: wrench
     items:
       - title: Terraform Module
+        icon: server
         page: pages/infrastructure/terraform.md
         visible_when:
           entitlements:
@@ -39,31 +45,38 @@ navigation:
     icon: wrench
     items:
       - title: Checking for Updates
+        icon: refresh-cw
         page: pages/updates/checking.md
       - title: Security
+        icon: shield
         page: pages/operations/security.md
         visible_when:
           permissions:
             - canViewSecurity
       - title: Linux Support Bundles
+        icon: life-buoy
         page: pages/operations/bundles/linux.md
         visible_when:
           entitlements:
             - isEmbeddedClusterDownloadEnabled
       - title: Helm Support Bundles
+        icon: life-buoy
         page: pages/operations/bundles/helm.md
         visible_when:
           entitlements:
             - isHelmInstallEnabled
       - title: Upload Support Bundle
+        icon: life-buoy
         page: pages/operations/bundles/uploaded.md
 
   - title: Support
     icon: life-buoy
     items:
       - title: FAQ
+        icon: book
         page: pages/support/faq.md
       - title: Contact Support
+        icon: life-buoy
         page: pages/support/contact.md
 
 overrides:
