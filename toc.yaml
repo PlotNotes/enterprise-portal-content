@@ -8,6 +8,8 @@ navigation:
       - title: Release History
         icon: refresh-cw
         page: pages/installation/release-history.md
+      - title: Downloadable Resources
+        page: pages/installation/resources.md
 
   - title: Installation
     icon: rocket
