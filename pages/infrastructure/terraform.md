@@ -38,7 +38,6 @@ module "purrfect_match" {
   source  = "proxy.purrfectproductions.com/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
 
-  admin_email = "{{ customer.email }}"
 }
 </CommandBlock>
 
@@ -54,7 +53,6 @@ terraform apply
 
 | Variable | Type | Description |
 |----------|------|-------------|
-| `admin_email` | string | Admin email for notifications |
 
 ### Deployment Options
 
@@ -109,7 +107,6 @@ module "purrfect_match" {
   source  = "proxy.purrfectproductions.com/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
 
-  admin_email = "admin@example.com"
 
   embedded_database    = false
   external_db_host     = "db.example.com"
