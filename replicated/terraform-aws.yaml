@@ -1,0 +1,14 @@
+apiVersion: replicated.com/v1beta1
+kind: Terraform
+metadata:
+  name: aws-infrastructure
+spec:
+  sourceRepository: "https://github.com/PlotNotes/purrfect-terraform"
+  sourcePath: "."
+  sourceRef: "main"
+  provider: aws
+  minTerraformVersion: "1.5.0"
+  docs:
+    description: "Deploy Purrfect Match to any Kubernetes cluster using Terraform. Provisions namespace, registry credentials, and Helm release."
+    requirements: "Kubernetes cluster with kubectl access, Helm provider configured, Purrfect Match license ID for registry authentication."
+    outputs: "Deployment namespace, Helm release name, deployed chart version, in-cluster service endpoint."
