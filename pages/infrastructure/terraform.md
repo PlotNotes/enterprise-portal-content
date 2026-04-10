@@ -20,11 +20,10 @@ This module provisions a namespace, configures registry credentials, and deploys
 - Terraform >= 1.5.0
 - A Kubernetes cluster with `kubectl` access
 - Helm and Kubernetes providers configured
-- Your Purrfect Match license ID: `{{ license.id }}`
 
 ## Registry Authentication
 
-Configure your `.terraformrc` to authenticate with the Purrfect Match registry:
+Add the following to your `.terraformrc` to authenticate with the Purrfect Match module registry:
 
 <CodeBlock language="hcl" title="~/.terraformrc">
 credentials "proxy.purrfectproductions.com" {
@@ -39,9 +38,7 @@ module "purrfect_match" {
   source  = "proxy.purrfectproductions.com/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
 
-  registry_username = "{{ license.id }}"
-  registry_password = "{{ license.id }}"
-  admin_email       = "{{ customer.email }}"
+  admin_email = "{{ customer.email }}"
 }
 </CodeBlock>
 
@@ -57,8 +54,6 @@ terraform apply
 
 | Variable | Type | Description |
 |----------|------|-------------|
-| `registry_username` | string | Your license ID |
-| `registry_password` | string | Your license ID |
 | `admin_email` | string | Admin email for notifications |
 
 ### Deployment Options
@@ -114,9 +109,7 @@ module "purrfect_match" {
   source  = "proxy.purrfectproductions.com/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
 
-  registry_username = "{{ license.id }}"
-  registry_password = "{{ license.id }}"
-  admin_email       = "admin@example.com"
+  admin_email = "admin@example.com"
 
   embedded_database    = false
   external_db_host     = "db.example.com"
