@@ -1,246 +1,81 @@
 # theme.yaml — Purrfect Match Enterprise Portal Branding
-# Glassmorphism: frosted glass panels on purple-indigo gradient
+# Clean dark purple theme
 
 branding:
   title: "Purrfect Match"
-  overview: "Welcome to the Purrfect Match Enterprise Portal. Manage your installation, access documentation, and get support."
+  overview: "Welcome to the Purrfect Match Enterprise Portal."
   contact: support@purrfectproductions.com
   supportPortalLink: https://purrfectproductions.com/support
 
-  # Purple brand
   primaryColor: "#7c3aed"
   secondaryColor: "#a855f7"
 
   linkColor: "#a855f7"
   linkHoverColor: "#c084fc"
 
-  # Deep purple header
-  headerColor: "#1e1034"
-  headerGradientEnd: "#2d1b69"
+  headerColor: "#18112b"
+  headerGradientEnd: "#1e1534"
 
-  # Dark purple sidebar
-  sidebarColor: "#150d27"
-  sidebarGradientEnd: "#1e1034"
+  sidebarColor: "#130e21"
+  sidebarGradientEnd: "#18112b"
 
-  # Dark gradient content background
-  contentBackgroundColor: "#0f0a1a"
-  contentBackgroundGradientEnd: "#1a0e2e"
+  contentBackgroundColor: "#1a1225"
+  contentBackgroundGradientEnd: "#1a1225"
 
   background: minimal
 
 customCSS: |
-  /* ═══════════════════════════════════════════
-     GLASSMORPHISM — Purrfect Match Portal
-     ═══════════════════════════════════════════ */
+  /* Headings */
+  main h1 { color: #e9d5ff !important; }
+  main h2 { color: #d8b4fe !important; }
+  main h3, main h4 { color: #c4b5fd !important; }
 
-  /* Animated gradient background */
-  body {
-    background: linear-gradient(135deg, #0f0a1a 0%, #1a0e2e 25%, #2d1b69 50%, #1e1034 75%, #0f0a1a 100%) !important;
-    background-size: 400% 400% !important;
-    animation: gradientShift 20s ease infinite !important;
-  }
-
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  /* ── Frosted glass content area ── */
-  main, main > div {
-    background: rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 16px !important;
-    margin: 1rem !important;
-    padding: 2rem !important;
-  }
-
-  /* ── Frosted sidebar ── */
-  nav.w-72 {
-    background: rgba(15, 10, 26, 0.7) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
-    border-right: 1px solid rgba(168, 85, 247, 0.15) !important;
-  }
-
-  /* ── Header glass effect ── */
-  header, [class*="header"] {
-    background: rgba(30, 16, 52, 0.8) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    border-bottom: 1px solid rgba(168, 85, 247, 0.2) !important;
-  }
-
-  /* ── Typography ── */
-  main h1 {
-    color: #e9d5ff !important;
-    text-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
-  }
-  main h2 {
-    color: #d8b4fe !important;
-  }
-  main h3, main h4 {
-    color: #c4b5fd !important;
-  }
-
+  /* Body text */
   main p, main li, main td, main th, main label, main span {
-    color: #c4b5fd !important;
+    color: #b8a8d4 !important;
   }
+  main strong { color: #f3e8ff !important; }
 
-  main strong {
-    color: #f3e8ff !important;
-  }
+  /* Links */
+  main a { color: #a855f7 !important; }
+  main a:hover { color: #c084fc !important; }
 
-  /* ── Links with glow ── */
-  main a {
-    color: #a855f7 !important;
-    text-decoration: none !important;
-    transition: all 0.2s ease !important;
-  }
-  main a:hover {
-    color: #c084fc !important;
-    text-shadow: 0 0 8px rgba(168, 85, 247, 0.5) !important;
-  }
-
-  /* ── Sidebar links ── */
-  nav.w-72 a {
-    color: #8b7aad !important;
-    transition: all 0.2s ease !important;
-  }
-  nav.w-72 a:hover {
-    color: #c084fc !important;
-  }
+  /* Sidebar */
+  nav.w-72 a { color: #7c6f99 !important; }
+  nav.w-72 a:hover { color: #c084fc !important; }
   nav.w-72 a[data-active="true"] {
     color: #a855f7 !important;
     font-weight: 600;
-    text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
   }
 
-  /* ── Tables with glass ── */
-  main table {
-    border-collapse: separate !important;
-    border-spacing: 0 !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    border: 1px solid rgba(168, 85, 247, 0.15) !important;
-  }
+  /* Tables */
   main thead th {
-    background: rgba(168, 85, 247, 0.15) !important;
+    background-color: rgba(124, 58, 237, 0.15) !important;
     color: #e9d5ff !important;
-    border-bottom: 1px solid rgba(168, 85, 247, 0.2) !important;
   }
   main tbody td {
-    border-bottom: 1px solid rgba(168, 85, 247, 0.08) !important;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1) !important;
   }
 
-  /* ── Code blocks with neon border ── */
+  /* Code */
   main pre {
-    background: rgba(15, 10, 26, 0.8) !important;
-    border: 1px solid rgba(168, 85, 247, 0.25) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.1), inset 0 0 30px rgba(168, 85, 247, 0.05) !important;
+    background-color: #110c1d !important;
+    border: 1px solid rgba(124, 58, 237, 0.2) !important;
+    border-radius: 8px !important;
   }
-  main pre code {
-    color: #d8b4fe !important;
-  }
+  main pre code { color: #d8b4fe !important; }
   main code {
-    background: rgba(168, 85, 247, 0.12) !important;
+    background-color: rgba(124, 58, 237, 0.12) !important;
     color: #c084fc !important;
-    border-radius: 6px !important;
-    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    padding: 2px 5px !important;
   }
 
-  /* ── Form elements ── */
-  main select, main input[type="text"], main .portal-input, main .portal-select {
-    background: rgba(255, 255, 255, 0.05) !important;
+  /* Forms */
+  main select, main input[type="text"] {
+    background-color: #221a35 !important;
     color: #e9d5ff !important;
-    border: 1px solid rgba(168, 85, 247, 0.2) !important;
-    border-radius: 8px !important;
+    border: 1px solid rgba(124, 58, 237, 0.2) !important;
+    border-radius: 6px !important;
   }
-  main select:focus, main input[type="text"]:focus {
-    border-color: rgba(168, 85, 247, 0.5) !important;
-    box-shadow: 0 0 10px rgba(168, 85, 247, 0.2) !important;
-  }
-  main input[type="radio"] {
-    accent-color: #a855f7;
-  }
-
-  /* ── Buttons ── */
-  main button[type="submit"], main .portal-button {
-    background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
-    border: none !important;
-    border-radius: 8px !important;
-    color: white !important;
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3) !important;
-    transition: all 0.2s ease !important;
-  }
-  main button[type="submit"]:hover, main .portal-button:hover {
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5) !important;
-    transform: translateY(-1px) !important;
-  }
-
-  /* ── Note/callout boxes ── */
-  main [class*="note"], main [class*="callout"], main [class*="admonition"] {
-    background: rgba(168, 85, 247, 0.08) !important;
-    border: 1px solid rgba(168, 85, 247, 0.2) !important;
-    border-left: 3px solid #a855f7 !important;
-    border-radius: 8px !important;
-  }
-
-  /* ── Subtle floating orbs (ambient decoration) ── */
-  .docs-content-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
-  .docs-content-wrapper::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    animation: float1 15s ease-in-out infinite;
-  }
-  .docs-content-wrapper::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    left: -50px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    animation: float2 18s ease-in-out infinite;
-  }
-
-  @keyframes float1 {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(-30px, 30px); }
-  }
-  @keyframes float2 {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(20px, -20px); }
-  }
-
-  /* ── Scrollbar styling ── */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: rgba(15, 10, 26, 0.5);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: rgba(168, 85, 247, 0.3);
-    border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(168, 85, 247, 0.5);
-  }
+  main input[type="radio"] { accent-color: #a855f7; }
