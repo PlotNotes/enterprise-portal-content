@@ -1,5 +1,5 @@
 # theme.yaml — Purrfect Match Enterprise Portal Branding
-# Clean dark purple theme
+# Clean light theme with purple accents
 
 branding:
   title: "Purrfect Match"
@@ -8,74 +8,58 @@ branding:
   supportPortalLink: https://purrfectproductions.com/support
 
   primaryColor: "#7c3aed"
-  secondaryColor: "#a855f7"
+  secondaryColor: "#6d28d9"
 
-  linkColor: "#a855f7"
-  linkHoverColor: "#c084fc"
+  linkColor: "#7c3aed"
+  linkHoverColor: "#6d28d9"
 
-  headerColor: "#18112b"
-  headerGradientEnd: "#1e1534"
+  headerColor: "#ffffff"
+  headerGradientEnd: "#faf5ff"
 
-  sidebarColor: "#130e21"
-  sidebarGradientEnd: "#18112b"
+  sidebarColor: "#faf5ff"
+  sidebarGradientEnd: "#f5f3ff"
 
-  contentBackgroundColor: "#1a1225"
-  contentBackgroundGradientEnd: "#1a1225"
+  contentBackgroundColor: "#ffffff"
+  contentBackgroundGradientEnd: "#ffffff"
 
   background: minimal
 
 customCSS: |
-  /* Headings */
-  main h1 { color: #e9d5ff !important; }
-  main h2 { color: #d8b4fe !important; }
-  main h3, main h4 { color: #c4b5fd !important; }
+  /* Purple headings */
+  main h1 { color: #6d28d9 !important; }
+  main h2 { color: #7c3aed !important; }
+  main h3, main h4 { color: #5b21b6 !important; }
 
-  /* Body text */
-  main p, main li, main td, main th, main label, main span {
-    color: #b8a8d4 !important;
-  }
-  main strong { color: #f3e8ff !important; }
-
-  /* Links */
-  main a { color: #a855f7 !important; }
-  main a:hover { color: #c084fc !important; }
-
-  /* Sidebar */
-  nav.w-72 a { color: #7c6f99 !important; }
-  nav.w-72 a:hover { color: #c084fc !important; }
+  /* Active sidebar */
   nav.w-72 a[data-active="true"] {
-    color: #a855f7 !important;
+    color: #7c3aed !important;
     font-weight: 600;
   }
 
-  /* Tables */
+  /* Table header */
   main thead th {
-    background-color: rgba(124, 58, 237, 0.15) !important;
-    color: #e9d5ff !important;
-  }
-  main tbody td {
-    border-bottom: 1px solid rgba(124, 58, 237, 0.1) !important;
+    background-color: #f5f3ff !important;
+    color: #5b21b6 !important;
   }
 
   /* Code */
   main pre {
-    background-color: #110c1d !important;
-    border: 1px solid rgba(124, 58, 237, 0.2) !important;
+    background-color: #faf5ff !important;
+    border: 1px solid #e9d5ff !important;
     border-radius: 8px !important;
   }
-  main pre code { color: #d8b4fe !important; }
   main code {
-    background-color: rgba(124, 58, 237, 0.12) !important;
-    color: #c084fc !important;
+    background-color: #f3e8ff !important;
+    color: #6d28d9 !important;
     border-radius: 4px !important;
-    padding: 2px 5px !important;
+    padding: 1px 4px !important;
+  }
+  main pre code {
+    color: #1f2937 !important;
+    background-color: transparent !important;
   }
 
-  /* Forms */
-  main select, main input[type="text"] {
-    background-color: #221a35 !important;
-    color: #e9d5ff !important;
-    border: 1px solid rgba(124, 58, 237, 0.2) !important;
-    border-radius: 6px !important;
+  /* Subtle purple top border on header */
+  header {
+    border-bottom: 2px solid #e9d5ff !important;
   }
-  main input[type="radio"] { accent-color: #a855f7; }
