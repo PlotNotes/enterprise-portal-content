@@ -1,5 +1,5 @@
 # theme.yaml — Purrfect Match Enterprise Portal Branding
-# Clean light theme with purple accents
+# Slightly darker with more visual interest
 
 branding:
   title: "Purrfect Match"
@@ -13,53 +13,114 @@ branding:
   linkColor: "#7c3aed"
   linkHoverColor: "#6d28d9"
 
-  headerColor: "#ffffff"
-  headerGradientEnd: "#faf5ff"
+  headerColor: "#f8f6fc"
+  headerGradientEnd: "#f0ecf9"
 
-  sidebarColor: "#faf5ff"
-  sidebarGradientEnd: "#f5f3ff"
+  sidebarColor: "#f0ecf9"
+  sidebarGradientEnd: "#e8e2f4"
 
-  contentBackgroundColor: "#ffffff"
-  contentBackgroundGradientEnd: "#ffffff"
+  contentBackgroundColor: "#f5f3fa"
+  contentBackgroundGradientEnd: "#f5f3fa"
 
   background: minimal
 
 customCSS: |
-  /* Purple headings */
-  main h1 { color: #6d28d9 !important; }
-  main h2 { color: #7c3aed !important; }
-  main h3, main h4 { color: #5b21b6 !important; }
-
-  /* Active sidebar */
-  nav.w-72 a[data-active="true"] {
-    color: #7c3aed !important;
-    font-weight: 600;
+  /* Subtle purple gradient at the very top of the page */
+  header {
+    border-bottom: none !important;
+    background: linear-gradient(to right, #f0ecf9, #e8e2f4, #f0ecf9) !important;
+    box-shadow: 0 1px 3px rgba(124, 58, 237, 0.08) !important;
   }
+
+  /* Sidebar section headers */
+  nav.w-72 [class*="uppercase"] {
+    color: #7c3aed !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* Active sidebar item gets a purple left border */
+  nav.w-72 a[data-active="true"] {
+    color: #6d28d9 !important;
+    font-weight: 600;
+    border-left: 3px solid #7c3aed !important;
+    padding-left: 8px !important;
+    background: rgba(124, 58, 237, 0.06) !important;
+    border-radius: 0 6px 6px 0 !important;
+  }
+
+  /* Content area — white card on the tinted background */
+  main > div:first-child, main article {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 3px rgba(124, 58, 237, 0.06), 0 4px 12px rgba(124, 58, 237, 0.04) !important;
+    padding: 2rem !important;
+    margin: 1rem !important;
+  }
+
+  /* Headings */
+  main h1 {
+    color: #5b21b6 !important;
+    border-bottom: 2px solid #e9d5ff !important;
+    padding-bottom: 0.5rem !important;
+  }
+  main h2 { color: #6d28d9 !important; }
+  main h3, main h4 { color: #7c3aed !important; }
 
   /* Table header */
   main thead th {
-    background-color: #f5f3ff !important;
+    background: linear-gradient(135deg, #f3e8ff, #ede9fe) !important;
     color: #5b21b6 !important;
+    font-weight: 600 !important;
   }
-
-  /* Code */
-  main pre {
-    background-color: #faf5ff !important;
+  main table {
     border: 1px solid #e9d5ff !important;
     border-radius: 8px !important;
+    overflow: hidden !important;
   }
+
+  /* Code blocks — darker with purple left accent */
+  main pre {
+    background-color: #1e1034 !important;
+    border: none !important;
+    border-left: 3px solid #7c3aed !important;
+    border-radius: 8px !important;
+  }
+  main pre code {
+    color: #e2d9f3 !important;
+    background: transparent !important;
+  }
+
+  /* Inline code */
   main code {
     background-color: #f3e8ff !important;
     color: #6d28d9 !important;
     border-radius: 4px !important;
-    padding: 1px 4px !important;
-  }
-  main pre code {
-    color: #1f2937 !important;
-    background-color: transparent !important;
+    padding: 1px 5px !important;
+    font-size: 0.9em !important;
   }
 
-  /* Subtle purple top border on header */
-  header {
-    border-bottom: 2px solid #e9d5ff !important;
+  /* Form selects */
+  main select {
+    border: 1px solid #d8b4fe !important;
+    border-radius: 6px !important;
+  }
+  main select:focus {
+    border-color: #7c3aed !important;
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.15) !important;
+  }
+
+  /* Step numbers */
+  main [class*="step"] > span:first-child {
+    background: #7c3aed !important;
+    color: white !important;
+  }
+
+  /* Horizontal rules */
+  main hr {
+    border-color: #e9d5ff !important;
+  }
+
+  /* Lists — purple bullet points */
+  main ul li::marker {
+    color: #7c3aed !important;
   }
