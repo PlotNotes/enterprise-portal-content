@@ -1,0 +1,95 @@
+# theme.yaml — Purrfect Match Enterprise Portal Branding
+# =======================================================
+
+branding:
+  title: "Purrfect Match"
+  overview: "Welcome to the Purrfect Match Enterprise Portal. Manage your installation, access documentation, and get support."
+  contact: support@purrfectproductions.com
+  supportPortalLink: https://purrfectproductions.com/support
+
+  # Purple brand colors
+  primaryColor: "#7c3aed"
+  secondaryColor: "#9333ea"
+
+  # Link colors
+  linkColor: "#7c3aed"
+  linkHoverColor: "#a855f7"
+
+  # Light header with purple accent
+  background: minimal
+  headerColor: "#faf5ff"
+  headerGradientEnd: "#f3e8ff"
+
+  # Light sidebar
+  sidebarColor: "#faf5ff"
+  sidebarGradientEnd: "#ffffff"
+
+  # White content
+  contentBackgroundColor: "#ffffff"
+  contentBackgroundGradientEnd: "#ffffff"
+
+customCSS: |
+  /* Purple accented headings */
+  main h1 {
+    color: #7c3aed !important;
+  }
+  main h2 {
+    color: #6d28d9 !important;
+  }
+  main h3, main h4 {
+    color: #5b21b6 !important;
+  }
+
+  /* Body text */
+  main p, main li, main td {
+    color: #374151 !important;
+  }
+
+  /* Purple links */
+  main a {
+    color: #7c3aed !important;
+  }
+  main a:hover {
+    color: #a855f7 !important;
+  }
+
+  /* Active sidebar link */
+  nav.w-72 a[data-active="true"] {
+    color: #7c3aed !important;
+    font-weight: 600;
+  }
+
+  /* Table header */
+  main thead th {
+    background-color: #f3e8ff !important;
+    color: #5b21b6 !important;
+  }
+
+  /* Code blocks */
+  main code {
+    background-color: #f3e8ff !important;
+    color: #6d28d9 !important;
+  }
+  main pre {
+    background-color: #faf5ff !important;
+    border: 1px solid #e9d5ff !important;
+  }
+  main pre code {
+    color: #1f2937 !important;
+  }
+
+  /* Subtle purple gradient at top */
+  .docs-content-wrapper {
+    position: relative;
+  }
+  .docs-content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18rem;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(124, 58, 237, 0.05), transparent);
+    pointer-events: none;
+    z-index: 10;
+  }
