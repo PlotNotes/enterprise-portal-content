@@ -25,28 +25,28 @@ This module provisions a namespace, configures registry credentials, and deploys
 
 Add the following to your `.terraformrc` to authenticate with the Purrfect Match module registry:
 
-<CodeBlock language="hcl" title="~/.terraformrc">
+<CommandBlock label="~/.terraformrc">
 credentials "proxy.purrfectproductions.com" {
   token = "{{ license.id }}"
 }
-</CodeBlock>
+</CommandBlock>
 
 ## Quick Start
 
-<CodeBlock language="hcl" title="main.tf">
+<CommandBlock label="main.tf">
 module "purrfect_match" {
   source  = "proxy.purrfectproductions.com/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
 
   admin_email = "{{ customer.email }}"
 }
-</CodeBlock>
+</CommandBlock>
 
-<CodeBlock language="bash" title="Deploy">
+<CommandBlock label="Deploy">
 terraform init
 terraform plan
 terraform apply
-</CodeBlock>
+</CommandBlock>
 
 ## Configuration Reference
 
@@ -104,7 +104,7 @@ terraform apply
 
 ## Example: External Database
 
-<CodeBlock language="hcl" title="external-db.tf">
+<CommandBlock label="external-db.tf">
 module "purrfect_match" {
   source  = "proxy.purrfectproductions.com/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
@@ -117,6 +117,6 @@ module "purrfect_match" {
   external_db_password = var.db_password
   external_db_name     = "purrfect"
 }
-</CodeBlock>
+</CommandBlock>
 
 {{/if}}
