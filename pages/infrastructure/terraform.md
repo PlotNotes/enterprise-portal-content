@@ -27,8 +27,8 @@ This module provisions a namespace, configures registry credentials, and deploys
 Configure your `.terraformrc` to authenticate with the Purrfect Match registry:
 
 <CodeBlock language="hcl" title="~/.terraformrc">
-credentials "{{ registry.proxyDomain }}" {
-  token = "{{ license.id }}"
+credentials "{{ license.replicatedProxyDomain }}" {
+  token = "{{ license.licenseID }}"
 }
 </CodeBlock>
 
@@ -36,12 +36,12 @@ credentials "{{ registry.proxyDomain }}" {
 
 <CodeBlock language="hcl" title="main.tf">
 module "purrfect_match" {
-  source  = "{{ registry.proxyDomain }}/purrfect/purrfect-terraform/github"
+  source  = "{{ license.replicatedProxyDomain }}/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
 
-  registry_username = "{{ license.id }}"
-  registry_password = "{{ license.id }}"
-  admin_email       = "admin@example.com"
+  registry_username = "{{ license.licenseID }}"
+  registry_password = "{{ license.licenseID }}"
+  admin_email       = "{{ customer.email }}"
 }
 </CodeBlock>
 
@@ -57,8 +57,8 @@ terraform apply
 
 | Variable | Type | Description |
 |----------|------|-------------|
-| `registry_username` | string | Your license ID (for pulling images) |
-| `registry_password` | string | Your license ID (for pulling images) |
+| `registry_username` | string | Your license ID — `{{ license.licenseID }}` |
+| `registry_password` | string | Your license ID — `{{ license.licenseID }}` |
 | `admin_email` | string | Admin email for notifications |
 
 ### Deployment Options
@@ -67,7 +67,7 @@ terraform apply
 |----------|------|---------|-------------|
 | `namespace` | string | `"purrfect"` | Kubernetes namespace |
 | `release_name` | string | `"purrfect-match"` | Helm release name |
-| `chart_version` | string | `"{{ release.version }}"` | Chart version to deploy |
+| `chart_version` | string | `"1.0.17"` | Chart version to deploy |
 | `service_type` | string | `"ClusterIP"` | Service type (ClusterIP, NodePort, LoadBalancer) |
 | `service_port` | number | `8000` | Service port |
 
@@ -111,7 +111,7 @@ terraform apply
 
 <CodeBlock language="hcl" title="external-db.tf">
 module "purrfect_match" {
-  source  = "{{ registry.proxyDomain }}/purrfect/purrfect-terraform/github"
+  source  = "{{ license.replicatedProxyDomain }}/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
 
   registry_username = var.license_id
@@ -123,30 +123,6 @@ module "purrfect_match" {
   external_db_user     = "purrfect"
   external_db_password = var.db_password
   external_db_name     = "purrfect"
-}
-</CodeBlock>
-
-## Example: Full Configuration
-
-<CodeBlock language="hcl" title="full.tf">
-module "purrfect_match" {
-  source  = "{{ registry.proxyDomain }}/purrfect/purrfect-terraform/github"
-  version = "1.0.0"
-
-  registry_username = var.license_id
-  registry_password = var.license_id
-  admin_email       = "ops@example.com"
-
-  namespace    = "purrfect-prod"
-  service_type = "LoadBalancer"
-
-  ingress_enabled = true
-  ingress_class   = "nginx"
-  ingress_host    = "cats.example.com"
-
-  allow_add_cats    = true
-  dark_mode         = false
-  max_cats_per_page = 24
 }
 </CodeBlock>
 
