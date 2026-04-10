@@ -20,15 +20,15 @@ This module provisions a namespace, configures registry credentials, and deploys
 - Terraform >= 1.5.0
 - A Kubernetes cluster with `kubectl` access
 - Helm and Kubernetes providers configured
-- Your Purrfect Match license ID
+- Your Purrfect Match license ID: `{{ license.id }}`
 
 ## Registry Authentication
 
 Configure your `.terraformrc` to authenticate with the Purrfect Match registry:
 
 <CodeBlock language="hcl" title="~/.terraformrc">
-credentials "{{ license.spec.replicatedProxyDomain }}" {
-  token = "{{ license.spec.licenseID }}"
+credentials "proxy.purrfectproductions.com" {
+  token = "{{ license.id }}"
 }
 </CodeBlock>
 
@@ -36,11 +36,11 @@ credentials "{{ license.spec.replicatedProxyDomain }}" {
 
 <CodeBlock language="hcl" title="main.tf">
 module "purrfect_match" {
-  source  = "{{ license.spec.replicatedProxyDomain }}/{{ app.slug }}/purrfect-terraform/github"
+  source  = "proxy.purrfectproductions.com/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
 
-  registry_username = "{{ license.spec.licenseID }}"
-  registry_password = "{{ license.spec.licenseID }}"
+  registry_username = "{{ license.id }}"
+  registry_password = "{{ license.id }}"
   admin_email       = "{{ customer.email }}"
 }
 </CodeBlock>
@@ -57,8 +57,8 @@ terraform apply
 
 | Variable | Type | Description |
 |----------|------|-------------|
-| `registry_username` | string | Your license ID — `{{ license.spec.licenseID }}` |
-| `registry_password` | string | Your license ID — `{{ license.spec.licenseID }}` |
+| `registry_username` | string | Your license ID |
+| `registry_password` | string | Your license ID |
 | `admin_email` | string | Admin email for notifications |
 
 ### Deployment Options
@@ -111,11 +111,11 @@ terraform apply
 
 <CodeBlock language="hcl" title="external-db.tf">
 module "purrfect_match" {
-  source  = "{{ license.spec.replicatedProxyDomain }}/{{ app.slug }}/purrfect-terraform/github"
+  source  = "proxy.purrfectproductions.com/{{ app.slug }}/purrfect-terraform/github"
   version = "1.0.0"
 
-  registry_username = var.license_id
-  registry_password = var.license_id
+  registry_username = "{{ license.id }}"
+  registry_password = "{{ license.id }}"
   admin_email       = "admin@example.com"
 
   embedded_database    = false
@@ -126,43 +126,4 @@ module "purrfect_match" {
 }
 </CodeBlock>
 
-
-## Debug — Template Variable Test
-
-- app.name: {{ app.name }}
-- app.slug: {{ app.slug }}
-- customer.name: {{ customer.name }}
-- customer.email: {{ customer.email }}
-- customer.id: {{ customer.id }}
-- channel.name: {{ channel.name }}
-- channel.slug: {{ channel.slug }}
-- license.licenseID: {{ license.licenseID }}
-- license.spec.licenseID: {{ license.spec.licenseID }}
-- license.id: {{ license.id }}
-- license.replicatedProxyDomain: {{ license.replicatedProxyDomain }}
-- license.spec.replicatedProxyDomain: {{ license.spec.replicatedProxyDomain }}
-- license.appSlug: {{ license.appSlug }}
-- license.spec.appSlug: {{ license.spec.appSlug }}
-- license.channelName: {{ license.channelName }}
-- license.spec.channelName: {{ license.spec.channelName }}
 {{/if}}
-
-## Debug — Template Variable Test
-
-| Path | Value |
-|------|-------|
-| app.name | {{ app.name }} |
-| app.slug | {{ app.slug }} |
-| customer.name | {{ customer.name }} |
-| customer.id | {{ customer.id }} |
-| channel.name | {{ channel.name }} |
-| license.licenseID | {{ license.licenseID }} |
-| license.id | {{ license.id }} |
-| license.replicatedProxyDomain | {{ license.replicatedProxyDomain }} |
-| license.spec.licenseID | {{ license.spec.licenseID }} |
-| license.spec.replicatedProxyDomain | {{ license.spec.replicatedProxyDomain }} |
-| license.appSlug | {{ license.appSlug }} |
-| license.spec.appSlug | {{ license.spec.appSlug }} |
-| license.channelName | {{ license.channelName }} |
-| license.spec.channelName | {{ license.spec.channelName }} |
-
