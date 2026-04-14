@@ -4,7 +4,6 @@ navigation:
     items:
       - title: Requirements
         icon: shield
-        page: pages/installation/requirements.md
       - title: Release History
         icon: refresh-cw
         page: pages/installation/release-history.md
