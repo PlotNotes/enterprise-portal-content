@@ -12,6 +12,8 @@ navigation:
   - title: Installation
     icon: rocket
     items:
+      - title: Asset Downloading
+        page: pages/installation/asset-downloading.md
       - title: Linux Installation
         icon: server
         page: pages/installation/linux.md
