@@ -19,15 +19,17 @@ Deploy Purrfect Match to your existing Kubernetes cluster using Helm. You'll be 
 
 ---
 
-<InstallStep stepNumber={1} title="Name Your Instance">
+## Choose an installation
 
-Give this Purrfect Match instance a name to identify it in your environment.
+<PendingInstallSelector method="helm" />
 
-<InstanceName title="Name Your Purrfect Match Instance" />
+<NewInstall method="helm" />
 
-</InstallStep>
+<InstanceName method="helm" title="Name Your Purrfect Match Instance" />
 
-<InstallStep stepNumber={2} title="Configure Your Deployment">
+---
+
+<InstallStep stepNumber={1} title="Configure Your Deployment">
 
 Select your deployment preferences below. The install commands will update automatically based on your choices.
 
@@ -41,15 +43,19 @@ Select your deployment preferences below. The install commands will update autom
 <Tabs defaultActiveTab={0}>
 <Tab title="Online Installation">
 
-<InstallStep stepNumber={3} title="Install Purrfect Match">
+<InstallStep stepNumber={2} title="Install Purrfect Match">
 
 Run the following commands to deploy Purrfect Match to your cluster.
+
+<Note>
+The commands below are personalized to your selected installation. If you switch installations or rename your instance, the commands will update automatically.
+</Note>
 
 <HelmInstallAssets />
 
 </InstallStep>
 
-<InstallStep stepNumber={4} title="Verify the Installation">
+<InstallStep stepNumber={3} title="Verify the Installation">
 
 Confirm all pods are running and healthy:
 
@@ -68,15 +74,19 @@ You should see all pods in a `Running` or `Completed` state. If any pods are in 
 Air gap installations are for environments without direct internet access. You'll need to download the bundle on a connected machine and transfer it to your cluster network.
 </Note>
 
-<InstallStep stepNumber={3} title="Install Purrfect Match (Air Gap)">
+<InstallStep stepNumber={2} title="Install Purrfect Match (Air Gap)">
 
 Follow the steps below to deploy in an air-gapped environment.
+
+<Note>
+The commands below are personalized to your selected installation. If you switch installations or rename your instance, the commands will update automatically.
+</Note>
 
 <HelmAirgapInstallAssets />
 
 </InstallStep>
 
-<InstallStep stepNumber={4} title="Verify the Installation">
+<InstallStep stepNumber={3} title="Verify the Installation">
 
 Confirm all pods are running and healthy:
 
@@ -100,6 +110,6 @@ Your Purrfect Match instance is deployed. Here's what to do next:
 </Tip>
 
 - **[Helm Chart Reference](helm-chart-reference)** — Fine-tune your deployment with all available configuration values
-- **[Checking for Updates](../updates/checking)** — Stay current with new releases and security patches
+- **[Instances & Updates](../updates/instances)** — Review your deployed instances and apply updates
 - **[FAQ](../support/faq)** — Common questions and troubleshooting tips
 - **[Contact Support](../support/contact)** — Reach out if you need a helping paw

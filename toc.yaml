@@ -43,12 +43,19 @@ navigation:
           entitlements:
             - terraformModuleEnabled
 
-  - title: Operations
-    icon: wrench
+  - title: Updates
+    icon: refresh-cw
     items:
+      - title: Instances & Updates
+        icon: refresh-cw
+        page: pages/updates/instances.md
       - title: Checking for Updates
         icon: refresh-cw
         page: pages/updates/checking.md
+
+  - title: Operations
+    icon: wrench
+    items:
       - title: Security
         icon: shield
         page: pages/operations/security.md

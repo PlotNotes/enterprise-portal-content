@@ -18,25 +18,31 @@ Install Purrfect Match on a Linux server using Embedded Cluster v3. This option 
 
 ---
 
-<InstallStep stepNumber={1} title="Name Your Instance">
+## Choose an installation
 
-Give this Purrfect Match instance a name to identify it in your environment.
+<PendingInstallSelector method="linux" />
 
-<InstanceName title="Name Your Purrfect Match Instance" />
+<NewInstall method="linux" />
 
-</InstallStep>
+<InstanceName method="linux" title="Name Your Purrfect Match Instance" />
 
-<InstallStep stepNumber={2} title="Download the Installer">
+---
+
+<InstallStep stepNumber={1} title="Download the Installer">
 
 Select your version and download the installation assets.
 
 <VersionSelector installType="linux" />
 
+<Note>
+The commands below are personalized to your selected installation. If you switch installations or rename your instance, the commands will update automatically.
+</Note>
+
 <LinuxInstallAssets />
 
 </InstallStep>
 
-<InstallStep stepNumber={3} title="Extract and Install">
+<InstallStep stepNumber={2} title="Extract and Install">
 
 SSH into your target machine, transfer the downloaded archive, then extract and run:
 
@@ -59,7 +65,7 @@ For headless (non-interactive) installations, add the `--headless` and `--instal
 
 </InstallStep>
 
-<InstallStep stepNumber={4} title="Access the Installer UI">
+<InstallStep stepNumber={3} title="Access the Installer UI">
 
 Once the installer bootstraps, it will display a URL to complete the setup. Open it in your browser to configure the application.
 
@@ -71,7 +77,7 @@ You can provide your own TLS certificate during installation with the `--tls-cer
 
 </InstallStep>
 
-<InstallStep stepNumber={5} title="Verify the Installation">
+<InstallStep stepNumber={4} title="Verify the Installation">
 
 After the installation completes, verify all pods are running:
 
@@ -104,7 +110,7 @@ The upgrade preserves all data and configuration.
 Your Purrfect Match instance is installed and ready. Here's what to explore next:
 </Tip>
 
-- **[Checking for Updates](../updates/checking)** — Stay current with new releases
+- **[Instances & Updates](../updates/instances)** — Review your deployed instances and apply updates
 - **[Linux Support Bundles](../operations/bundles/linux)** — Generate diagnostics if needed
 - **[FAQ](../support/faq)** — Common questions and troubleshooting tips
 - **[Contact Support](../support/contact)** — We're here if you need a helping paw
