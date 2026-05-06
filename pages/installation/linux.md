@@ -30,8 +30,9 @@ Install Purrfect Match on a Linux server using Embedded Cluster v3. This option 
 
 <InstallStep stepNumber={1} title="Download the Installer">
 
-Select your version and download the installation assets.
+Select your deployment preferences below. The install commands will update automatically based on your choices.
 
+<NetworkAvailability installType="linux" />
 <VersionSelector installType="linux" />
 
 <Note>
