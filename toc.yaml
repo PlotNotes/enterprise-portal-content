@@ -8,6 +8,11 @@ navigation:
       - title: Release History
         icon: refresh-cw
         page: pages/installation/release-history.md
+      - title: Security Center Test
+        page: pages/test/security-center.md
+        visible_when:
+          entitlements:
+            - canViewSecurity
       - title: Template Variable Test
         page: pages/test/template-variables.md
   - title: Installation
